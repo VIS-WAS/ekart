@@ -16,6 +16,8 @@ import { ProductComponent } from './container/product-list/product/product.compo
 import { FilterComponent } from './container/product-list/filter/filter.component';
 import { ProductDetailComponent } from './container/product-detail/product-detail.component';
 import { FeaturedBrandsComponent } from './container/featured-brands/featured-brands.component';
+import { ZTeachComponent } from './z-teach/z-teach.component';
+import { ChildComponent } from './z-teach/child/child.component';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FeaturedBrandsComponent } from './container/featured-brands/featured-br
     FilterComponent,
     ProductDetailComponent,
     FeaturedBrandsComponent,
+    ZTeachComponent,
+    ChildComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
