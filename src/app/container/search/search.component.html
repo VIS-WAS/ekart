@@ -1,0 +1,56 @@
+<div class="ekart--search--product">
+  <input type="text" class="ekart-search-product-imput" #searchInput />
+
+  <!-------- TRV example without anyevent ---------->
+
+  <button class="btn btn-primary" (click)="updateSearch()">Search</button>
+
+  <!-------- TRV example without anyevent ---------->
+
+  <!--/////--------template refernce variable when event happend example-----
+  
+  <button class="btn btn-primary" (click)="updateSearch(searchInput)">
+    Search
+  </button>
+
+/////--------template refernce variable example------->
+
+  <!--   
+    //////////////-------------non related component communication example=--------------------//////
+    <input
+    type="text"
+    class="ekart-search-product-imput"
+    [(ngModel)]="searchText"
+    (input)="onSearchTextChanged()"
+  /> 
+      //////////////-------------non related component communication example=--------------------//////
+
+--></div>
+
+<!-- 
+ //////////--------------- ngClass example-------------//////
+  <button
+    [ngClass]="{
+      btn: true,
+      'btn-primary': searchText,
+      'btn-search-disabled': !searchText
+    }"
+    [disabled]="!searchText"
+  >
+    Search
+  </button>
+</div>
+
+ //////////--------------- ngClass example-------------//////
+
+-->
+
+<div class="ekart-search-result-for">
+  <p *ngIf="searchText != ''">
+    <strong>Search result for: </strong>{{ searchText }}
+  </p>
+</div>
+<!-- <div class="ekart-product-container-header">
+  <h2>SHOES</h2>
+</div>
+<div class="ekart--products--container"></div> -->

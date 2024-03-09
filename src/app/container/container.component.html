@@ -1,0 +1,70 @@
+<div class="ekart--product--container">
+  <app-search (searchTextChanged)="setSearchtext($event)"></app-search>
+
+  <product-list [searchText]="searchText" #productListComponent></product-list>
+
+  <!------------------ template refernce variable on component from above component-------------------->
+
+  <product-detail
+    *ngIf="productListComponent.selectedProduct"
+    [productListComp]="productListComponent"
+  ></product-detail>
+
+  <!------------------ template refernce variable on component -------------------->
+
+  <!------------------// <ngcontent> example //-------------------->
+
+  <div class="ekart-featured-product">
+    <div class="ekart-featured-product-heading">
+      <h1>Later Arraival in popualar brand</h1>
+    </div>
+
+    <featured-brands
+      ><h3 class="title">New Arriaval in Nike</h3>
+      <button class="call-to-action">Show New Arrival in Nike</button>
+    </featured-brands>
+    <featured-brands
+      ><h3 class="title">New Arriaval in Adidas</h3>
+      <button class="call-to-action">Show New Arrival in Adidas</button>
+    </featured-brands>
+    <featured-brands
+      ><h3 class="title">New Arriaval in Reebok</h3>
+      <button class="call-to-action">Show New Arrival in Reebok</button>
+    </featured-brands>
+  </div>
+  <!------------------// <ngcontent> example //-------------------->
+
+  <!----------  ngFor example 1 -------------------
+  <div *ngFor="let item of [2, 3, 4, 5, 8]">
+    <p>Current element of array is :{{ item }}</p>
+  </div> ----------------------------------------->
+
+  <!-------------  ngFor example 2 --------------------
+  <div *ngFor="let item of listOfString">
+    <p>Current element of array is :{{ item }}</p>
+  </div> ------------------------------------------->
+
+  <!-- <img [src]="product.i15Image" alt="" />
+  <p>Name:{{ product.name }}</p>
+  <p>Price: $ {{ product.price + "/" }}</p>
+  <p>Color: {{ product.color }}</p>
+  <p>
+    Discount Price: $
+    {{ ((product.price * product.discount) / 100).toFixed(2) }}
+  </p>
+  <p>Final rate: {{ product.getFinalPrice().toFixed(2) }}</p>
+  <p>
+    {{
+      product.inStock > 0 ? "Only " + product.inStock + " left" : "Not in stock"
+    }}
+  </p>
+  <button (click)="cartDec()" [disabled]="!(addToCart > 0)">-</button>
+  <span> {{ addToCart }} </span>
+  <button (click)="cartInc()" [disabled]="addToCart >= product.inStock">
+    +</button
+  ><br />
+  <button [disabled]="!(product.inStock > 0)">Buy Now</button>
+  <input [placeholder]="pHolder" /> -->
+  <!-- <input (input)="onNameChange($event)" /> <br />
+  <p>Hurry Up! {{ name }}</p> -->
+</div>

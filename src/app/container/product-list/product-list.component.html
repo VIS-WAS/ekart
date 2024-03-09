@@ -1,0 +1,79 @@
+<!------------------ @Input() example -------------------------->
+
+<app-filter
+  [all]="totalProductCount"
+  [inStock]="totalProductInStock"
+  [outOfstock]="totalProductOutofStock"
+  (selectedFilterRadioButtonChanged)="onFilterChanged($event)"
+></app-filter>
+
+<!--------------------@Input() example -------------------- -->
+
+<div class="ekart--product--container">
+  <!--//-----<ng-container> example --------------//-->
+  <ng-container *ngFor="let prod of products">
+    <app-product
+      [product]="prod"
+      *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"
+      (click)="selectedProduct = prod"
+    ></app-product>
+  </ng-container>
+  <!--//-----<ng-container> example --------------//-->
+
+  <!--   
+  <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+    <app-product
+      [product]="prod"
+      *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"
+    ></app-product>
+  </div> 
+-->
+
+  <!-- -------@Output() example ----------->
+
+  <!-- <app-product
+    [product]="prod"
+    *ngIf="
+      selectedFilterRadioButton === 'all' ||
+      prod.is_in_inventory.toString() === selectedFilterRadioButton
+    "
+  ></app-product> -->
+
+  <!-- -----------------------@Output() example------------->
+
+  <!-----------------------------------------------------
+    //////////////ngFor, ngIf, ngStyle, ngClass example  moved to product-list/prod-------------
+
+    <div class="ekart--product--item" *ngFor="let prod of products">
+    <div class="ekart-wishlist-sale-container">
+      <div class="ekart--add--to--wishlist">
+        <i class="bi bi-heart" aria-hidden="true"></i>
+      </div>
+      <div class="ekart-on-sale-tag" *ngIf="prod.discountPrice">
+        {{ (100 - (prod.discountPrice / prod.price) * 100).toFixed() }}% OFF
+      </div>
+    </div>
+    <div class="ekart--product--image">
+      <img [src]="prod.imageURL" class="ekart--product--image" />
+    </div>
+    <div class="ekart--add--to--price">{{ prod.price }}</div>
+    <div class="ekart--product--name">{{ prod.name }}</div>
+    <div class="ekart--product--category">
+      {{ prod.gender }} . {{ prod.category }} . {{ prod.brand }}
+    </div>
+    <div class="ekart--product--available-colors">
+      {{ prod.color.length }}. color. Best Seller
+    </div>
+    <div
+      class="ekart--product--in--stock"
+      [ngStyle]="{
+        fontWeight: 'bold',
+        color: prod.is_in_inventory ? 'Green' : 'Red'
+      }"
+    >
+      {{ prod.is_in_inventory ? "Available in stock" : "No stock left" }}
+    </div>
+  </div> 
+//////////////ngFor, ngIf, ngStyle, ngClass example  moved to product-list/prod
+----------------------------------------------------------------------------->
+</div>
