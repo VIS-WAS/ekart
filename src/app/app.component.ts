@@ -10,10 +10,10 @@ export class AppComponent {
 
   //---------//ngOnchange example//------------//
 
-  inputVal: string = '';
+  inputVal: string[] = ['Hello', 'Hi there'];
 
   onBtnClicked(inputEl: HTMLInputElement) {
-    this.inputVal = inputEl.value;
+    this.inputVal.push(inputEl.value);
   }
   //---------//ngOnchange example//------------//
 
