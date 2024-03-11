@@ -6,12 +6,14 @@
 
 <!-- <button type="button" class="btn btn-danger">Danger</button> -->
 
-<!---------//ngDocheck example//----------------->
+<!---------//ngAfterContentInit example//----------------->
 
 <div class="container">
   <input type="text" name="" id="" #inputEl (focus)="(0)" />
   <button (click)="onBtnClicked(inputEl)">Submit</button>
-  <z-teach [message]="inputVal"></z-teach>
+  <z-teach [message]="inputVal">
+    <p #temp>this is projected content</p>
+  </z-teach>
 </div>
 
-<!---------//ngngDocheck example//----------------->
+<!---------//ngAfterContentInit example//----------------->
