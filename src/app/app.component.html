@@ -6,14 +6,14 @@
 
 <!-- <button type="button" class="btn btn-danger">Danger</button> -->
 
-<!---------//ngAfterContentInit example//----------------->
+<!---------//ngAfterContentChecked example//----------------->
 
 <div class="container">
   <input type="text" name="" id="" #inputEl (focus)="(0)" />
   <button (click)="onBtnClicked(inputEl)">Submit</button>
   <z-teach [message]="inputVal">
-    <p #temp>this is projected content</p>
+    <p #temp>User has entered following text:{{ inputVal }}</p>
   </z-teach>
 </div>
 
-<!---------//ngAfterContentInit example//----------------->
+<!---------//ngAfterContentChecked example//----------------->

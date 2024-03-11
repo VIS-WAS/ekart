@@ -1,4 +1,5 @@
 import {
+  AfterContentChecked,
   AfterContentInit,
   Component,
   ContentChild,
@@ -17,11 +18,11 @@ import {
   styleUrls: ['./z-teach.component.css'],
 })
 export class ZTeachComponent
-  implements OnChanges, OnInit, DoCheck, AfterContentInit
+  implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked
 {
   title: string = 'Demo component';
 
-  //---------//ngAfterContentInit example//------------//
+  //---------//ngAfterContentChecked example//------------//
 
   @Input() message: string;
 
@@ -37,18 +38,21 @@ export class ZTeachComponent
 
   ngOnInit() {
     console.log('ngInit hook  called');
-    console.log('In ngOnInit()', this.paraContent); //will be undefined
   }
 
   ngDoCheck() {
     console.log('ngDoCheck is called');
-    console.log('In ngDoCheck()', this.paraContent); //will be undefined
   }
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit is called');
-    console.log('In ngAfterContentInit()', this.paraContent.nativeElement);
+    console.log('ngAfterContentInit', this.paraContent.nativeElement);
   }
 
-  //---------//ngAfterContentInit example//------------//
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked is called');
+    console.log('ngAfterContentchecked', this.paraContent.nativeElement);
+  }
+
+  //---------//ngAfterContentChecked example//------------//
 }
