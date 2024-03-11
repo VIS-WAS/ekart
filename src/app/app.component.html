@@ -6,8 +6,12 @@
 
 <!-- <button type="button" class="btn btn-danger">Danger</button> -->
 
-<!---------//@ContentChild example//----------------->
+<!---------//ngOnchange example//----------------->
 
-<z-teach></z-teach>
+<div class="container">
+  <input type="text" name="" id="" #inputEl />
+  <button (click)="onBtnClicked(inputEl)">Submit</button>
+  <z-teach [message]="inputVal"></z-teach>
+</div>
 
-<!---------//@ContentChild example//----------------->
+<!---------//ngOnchange example//----------------->
