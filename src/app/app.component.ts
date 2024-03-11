@@ -8,20 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ekart';
 
-  //---------//ngOnchange example//------------//
+  //---------//ngDocheck example//------------//
 
-  inputVal: string[] = ['Hello', 'Hi there'];
+  inputVal: string = '';
 
   onBtnClicked(inputEl: HTMLInputElement) {
-    this.inputVal.push(inputEl.value);
+    this.inputVal = inputEl.value;
   }
-  //---------//ngOnchange example//------------//
-
-  //---------//constructor example//------------//
 
   constructor() {
     console.log('app component constructor called');
   }
-
-  //---------//constructor example//------------//
+  //---------//ngDocheck example//------------//
 }

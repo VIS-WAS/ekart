@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   ElementRef,
   Input,
   OnChanges,
@@ -13,18 +14,12 @@ import {
   templateUrl: './z-teach.component.html',
   styleUrls: ['./z-teach.component.css'],
 })
-export class ZTeachComponent implements OnChanges, OnInit {
+export class ZTeachComponent implements OnChanges, OnInit, DoCheck {
   title: string = 'Demo component';
 
-  //---------//ngOnchange example//------------//
+  //---------//ngDocheck example//------------//
 
-  @Input() message: string[];
-
-  //---------//ngOnchange example//------------//
-
-  //---------//ngOninit example//------------//
-
-  @ViewChild('temp') tempPara: ElementRef;
+  @Input() message: string;
 
   constructor() {
     console.log('z-teach component constructor called');
@@ -32,14 +27,15 @@ export class ZTeachComponent implements OnChanges, OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnchange hook  called');
-    console.log(this.message);
   }
 
   ngOnInit() {
     console.log('ngInit hook  called');
-    // console.log(this.tempPara.nativeElement); // this will throw an error due to view, child component,
-    //project view in not yet initiaze here. So @ViewChild() ....@contenChildren will not ne available
-
-    //---------//ngOnInit example//------------//
   }
+
+  ngDoCheck() {
+    console.log('ngDoCheck is called');
+  }
+
+  //---------//ngDocheck example//------------//
 }
