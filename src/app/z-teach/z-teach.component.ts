@@ -1,6 +1,7 @@
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterViewInit,
   Component,
   ContentChild,
   DoCheck,
@@ -18,13 +19,21 @@ import {
   styleUrls: ['./z-teach.component.css'],
 })
 export class ZTeachComponent
-  implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked
+  implements
+    OnChanges,
+    OnInit,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit
 {
   title: string = 'Demo component';
 
-  //---------//ngAfterContentChecked example//------------//
+  //---------//ngAfterViewChecked example//------------//
 
   @Input() message: string;
+
+  @ViewChild('childtemp') tempPara: ElementRef;
 
   @ContentChild('temp') paraContent: ElementRef;
 
@@ -46,13 +55,19 @@ export class ZTeachComponent
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit is called');
-    console.log('ngAfterContentInit', this.paraContent.nativeElement);
   }
 
   ngAfterContentChecked() {
     console.log('ngAfterContentChecked is called');
-    console.log('ngAfterContentchecked', this.paraContent.nativeElement);
   }
 
-  //---------//ngAfterContentChecked example//------------//
+  ngAfterViewInit() {
+    console.log('child ngAfterViewInit is called');
+  }
+  ngAfterViewChecked() {
+    console.log('child ngAfterViewChecked is called');
+    // console.log(this.tempPara.nativeElement.textContent);  //--to hold the changes made
+  }
+
+  //---------//ngAfterViewChecked example//------------//
 }

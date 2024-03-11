@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ekart';
 
-  //---------//ngDocheck example//------------//
+  //---------//ngAfterViewChecked example//------------//
 
   inputVal: string = '';
 
@@ -19,5 +19,13 @@ export class AppComponent {
   constructor() {
     console.log('app component constructor called');
   }
-  //---------//ngDocheck example//------------//
+
+  ngAfterViewInit() {
+    console.log('parent ngAfterViewInit is called');
+  }
+
+  ngAfterViewChecked() {
+    console.log('Parent ngAfterViewChecked is called');
+  }
+  //---------//ngAfterViewChecked example//------------//
 }
