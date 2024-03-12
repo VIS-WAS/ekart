@@ -29,7 +29,7 @@ export class ZTeachComponent
 {
   title: string = 'Demo component';
 
-  //---------//ngAfterViewChecked example//------------//
+  //---------//ngOnDestroy example//------------//
 
   @Input() message: string;
 
@@ -69,5 +69,8 @@ export class ZTeachComponent
     // console.log(this.tempPara.nativeElement.textContent);  //--to hold the changes made
   }
 
-  //---------//ngAfterViewChecked example//------------//
+  ngOnDestroy() {
+    console.log('child ngOnDestroy is called');
+  }
+  //---------//ngOnDestroy example//------------//
 }

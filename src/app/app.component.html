@@ -6,14 +6,17 @@
 
 <!-- <button type="button" class="btn btn-danger">Danger</button> -->
 
-<!---------//ngAfterViewChecked example//----------------->
+<!---------//ngOnDestroy example//----------------->
 
 <div class="container">
   <input type="text" name="" id="" #inputEl (focus)="(0)" />
   <button (click)="onBtnClicked(inputEl)">Submit</button>
-  <z-teach [message]="inputVal">
+  <z-teach [message]="inputVal" *ngIf="!toDestroy">
     <p #temp>User has entered following text:{{ inputVal }}</p>
   </z-teach>
+
+  <br /><br />
+  <button (click)="destroyComponent()">Show/Hide</button>
 </div>
 
-<!---------//ngAfterViewChecked example//----------------->
+<!---------//ngOnDestroy example//----------------->

@@ -8,9 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ekart';
 
-  //---------//ngAfterViewChecked example//------------//
+  //---------//ngOnDestroy example//------------//
 
   inputVal: string = '';
+
+  toDestroy: boolean = false;
 
   onBtnClicked(inputEl: HTMLInputElement) {
     this.inputVal = inputEl.value;
@@ -27,5 +29,9 @@ export class AppComponent {
   ngAfterViewChecked() {
     console.log('Parent ngAfterViewChecked is called');
   }
-  //---------//ngAfterViewChecked example//------------//
+
+  destroyComponent() {
+    this.toDestroy = !this.toDestroy;
+  }
+  //---------//ngOnDestroy example//------------//
 }
