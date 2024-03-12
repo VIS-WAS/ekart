@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './container/product-detail/product-detai
 import { FeaturedBrandsComponent } from './container/featured-brands/featured-brands.component';
 import { ZTeachComponent } from './z-teach/z-teach.component';
 import { ChildComponent } from './z-teach/child/child.component';
+import { SetBackground } from './CustomDirectives/SetBackground.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ChildComponent } from './z-teach/child/child.component';
     FeaturedBrandsComponent,
     ZTeachComponent,
     ChildComponent,
+    SetBackground,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
