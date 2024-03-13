@@ -26,14 +26,14 @@ export class ChildComponent {
   styleParagraph() {
     //------------// @ContentChild() on componet example //-------------//
 
-    console.log(this.topHeader);
+    // console.log(this.topHeader);
 
     //------------// @ContentChild() on componet example //-------------//
 
     //------------// @ContentChildren() example //-------------//
 
     this.paraElements.forEach((el) => {
-      console.log(el.nativeElement);
+      // console.log(el.nativeElement);
     });
   }
 

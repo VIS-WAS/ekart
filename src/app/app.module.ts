@@ -19,6 +19,7 @@ import { FeaturedBrandsComponent } from './container/featured-brands/featured-br
 import { ZTeachComponent } from './z-teach/z-teach.component';
 import { ChildComponent } from './z-teach/child/child.component';
 import { SetBackground } from './CustomDirectives/SetBackground.directive';
+import { HighlightDirective } from './CustomDirectives/highlight.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SetBackground } from './CustomDirectives/SetBackground.directive';
     ZTeachComponent,
     ChildComponent,
     SetBackground,
+    HighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

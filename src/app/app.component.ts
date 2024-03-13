@@ -19,15 +19,15 @@ export class AppComponent {
   }
 
   constructor() {
-    console.log('app component constructor called');
+    // console.log('app component constructor called');
   }
 
   ngAfterViewInit() {
-    console.log('parent ngAfterViewInit is called');
+    // console.log('parent ngAfterViewInit is called');
   }
 
   ngAfterViewChecked() {
-    console.log('Parent ngAfterViewChecked is called');
+    // console.log('Parent ngAfterViewChecked is called');
   }
 
   destroyComponent() {

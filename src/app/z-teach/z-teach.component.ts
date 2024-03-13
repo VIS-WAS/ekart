@@ -38,39 +38,39 @@ export class ZTeachComponent
   @ContentChild('temp') paraContent: ElementRef;
 
   constructor() {
-    console.log('z-teach component constructor called');
+    // console.log('z-teach component constructor called');
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnchange hook  called');
+    // console.log('ngOnchange hook  called');
   }
 
   ngOnInit() {
-    console.log('ngInit hook  called');
+    // console.log('ngInit hook  called');
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck is called');
+    // console.log('ngDoCheck is called');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit is called');
+    // console.log('ngAfterContentInit is called');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked is called');
+    // console.log('ngAfterContentChecked is called');
   }
 
   ngAfterViewInit() {
-    console.log('child ngAfterViewInit is called');
+    // console.log('child ngAfterViewInit is called');
   }
   ngAfterViewChecked() {
-    console.log('child ngAfterViewChecked is called');
+    // console.log('child ngAfterViewChecked is called');
     // console.log(this.tempPara.nativeElement.textContent);  //--to hold the changes made
   }
 
   ngOnDestroy() {
-    console.log('child ngOnDestroy is called');
+    // console.log('child ngOnDestroy is called');
   }
   //---------//ngOnDestroy example//------------//
 }
