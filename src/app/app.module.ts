@@ -20,6 +20,7 @@ import { ZTeachComponent } from './z-teach/z-teach.component';
 import { ChildComponent } from './z-teach/child/child.component';
 import { SetBackground } from './CustomDirectives/SetBackground.directive';
 import { HighlightDirective } from './CustomDirectives/highlight.directive';
+import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HighlightDirective } from './CustomDirectives/highlight.directive';
     ChildComponent,
     SetBackground,
     HighlightDirective,
+    AppHoverDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
