@@ -6,17 +6,26 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 export class SetBackground implements OnInit {
   // -------------//Property in directive//------------------//
 
-  @Input('setBackground') backColor: string = '#36454f';
-  @Input() textColor: string = 'white';
+  // @Input('setBackground') backColor: string = '#36454f';
+  // @Input() textColor: string = 'white';
   @Input() fontWeight: string = '900';
+
+  @Input('setBackground') changeTextAndBackColor: {
+    backColor: string;
+    textColor: string;
+  };
   constructor(private element: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
     this.renderer.setStyle(
       this.element.nativeElement,
       'backgroundColor',
-      this.backColor
+      this.changeTextAndBackColor.backColor
     );
-    this.renderer.setStyle(this.element.nativeElement, 'color', this.textColor);
+    this.renderer.setStyle(
+      this.element.nativeElement,
+      'color',
+      this.changeTextAndBackColor.textColor
+    );
     this.renderer.setStyle(
       this.element.nativeElement,
       'fontWeight',
