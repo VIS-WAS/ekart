@@ -1,7 +1,20 @@
-<!------------// ngOnDestroy example //-------------->
-<div class="demo">
-  <p #childtemp>Message: {{ message }}</p>
+<!------------//property and event binding//----------------->
+
+<div class="propEven">
+  <input type="text" [value]="textValue" (focus)="logValue()" /> <br />
+
+  <p id="display"></p>
+  <button>Click Me</button>
 </div>
 
-<ng-content></ng-content>
-<!------------// ngOnDestroy example //-------------->
+<!------------//property and event binding//----------------->
+
+<!------------//@HostBinding and @HostListner//----------------->
+
+<div class="hostBinList">
+  <input type="text" appSample /> <br />
+
+  <p id="dis"></p>
+  <button>Click Me</button>
+</div>
+<!------------//@HostBinding and @HostListner//----------------->
