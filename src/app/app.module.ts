@@ -22,6 +22,7 @@ import { SetBackground } from './CustomDirectives/SetBackground.directive';
 import { HighlightDirective } from './CustomDirectives/highlight.directive';
 import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 import { SampleDirective } from './CustomDirectives/sample.directive';
+import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { SampleDirective } from './CustomDirectives/sample.directive';
     HighlightDirective,
     AppHoverDirective,
     SampleDirective,
+    DisableProductDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
