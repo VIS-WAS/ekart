@@ -8,30 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ekart';
 
-  //---------//ngOnDestroy example//------------//
+  display: boolean = true;
 
-  inputVal: string = '';
-
-  toDestroy: boolean = false;
-
-  onBtnClicked(inputEl: HTMLInputElement) {
-    this.inputVal = inputEl.value;
+  displayTerms() {
+    this.display = !this.display;
   }
-
-  constructor() {
-    // console.log('app component constructor called');
-  }
-
-  ngAfterViewInit() {
-    // console.log('parent ngAfterViewInit is called');
-  }
-
-  ngAfterViewChecked() {
-    // console.log('Parent ngAfterViewChecked is called');
-  }
-
-  destroyComponent() {
-    this.toDestroy = !this.toDestroy;
-  }
-  //---------//ngOnDestroy example//------------//
 }

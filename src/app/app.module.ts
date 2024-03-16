@@ -24,6 +24,7 @@ import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 import { SampleDirective } from './CustomDirectives/sample.directive';
 import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
 import { ClassDirective } from './CustomDirectives/class.directive';
+import { StyleDirective } from './CustomDirectives/style.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ClassDirective } from './CustomDirectives/class.directive';
     SampleDirective,
     DisableProductDirective,
     ClassDirective,
+    StyleDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
