@@ -25,6 +25,7 @@ import { SampleDirective } from './CustomDirectives/sample.directive';
 import { DisableProductDirective } from './CustomDirectives/disable-product.directive';
 import { ClassDirective } from './CustomDirectives/class.directive';
 import { StyleDirective } from './CustomDirectives/style.directive';
+import { IfDirective } from './CustomDirectives/if.directive';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { StyleDirective } from './CustomDirectives/style.directive';
     DisableProductDirective,
     ClassDirective,
     StyleDirective,
+    IfDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
