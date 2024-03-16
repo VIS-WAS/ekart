@@ -18,3 +18,28 @@ button {
 input {
   height: 40px;
 }
+
+/* --------------//Custom class directive//--------------> */
+
+h2 {
+  margin: 20px 50px;
+  font-family: "Lucida Sans";
+  color: #28282b;
+}
+
+.app-container {
+  margin: 30px 50px;
+  padding: 10px 20px;
+}
+.appHightlight {
+  border: #28282b 3px solid;
+  background-color: gold;
+}
+
+.appFont {
+  font-family: "Lucida Sans";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* --------------//Custom class directive//--------------> */
