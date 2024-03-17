@@ -20,8 +20,6 @@ export class FilterComponent {
   selectedFilterRadioButton: string = 'all';
 
   onSelectedFilterRadioButtonChanged() {
-    console.log(
-      this.selectedFilterRadioButtonChanged.emit(this.selectedFilterRadioButton)
-    );
+    this.selectedFilterRadioButtonChanged.emit(this.selectedFilterRadioButton);
   }
 }

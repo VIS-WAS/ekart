@@ -30,15 +30,15 @@
 -->
 
   <!-- -------@Output() example ----------->
-
-  <!-- <app-product
-    [product]="prod"
-    *ngIf="
-      selectedFilterRadioButton === 'all' ||
-      prod.is_in_inventory.toString() === selectedFilterRadioButton
-    "
-  ></app-product> -->
-
+  <!-- <ng-container *ngFor="let prod of products">
+    <app-product
+      [product]="prod"
+      *ngIf="
+        selectedFilterRadioButton === 'all' ||
+        prod.is_in_inventory.toString() === selectedFilterRadioButton
+      "
+    ></app-product>
+  </ng-container> -->
   <!-- -----------------------@Output() example------------->
 
   <!-----------------------------------------------------

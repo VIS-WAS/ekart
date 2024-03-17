@@ -1,0 +1,20 @@
+.hero-container {
+  width: 420px;
+  padding: 30px 10px;
+}
+.hero-text {
+  margin: 20px 0px;
+}
+.hero-button {
+  background-color: #0047ab;
+  color: white;
+  width: 240px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}

@@ -29,6 +29,11 @@ import { IfDirective } from './CustomDirectives/if.directive';
 import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
 import { Comp1Component } from './view-encapsulation/comp1/comp1.component';
 import { Comp2Component } from './view-encapsulation/comp2/comp2.component';
+import { AngularServicesComponent } from './angular-services/angular-services.component';
+import { HomeComponent } from './angular-services/header/home/home.component';
+import { HeroComponent } from './angular-services/header/home/hero/hero.component';
+import { SidebarComponent } from './angular-services/header/home/sidebar/sidebar.component';
+import { HeaderServiceComponent } from './angular-services/header/header.component';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -57,6 +62,11 @@ import { Comp2Component } from './view-encapsulation/comp2/comp2.component';
     ViewEncapsulationComponent,
     Comp1Component,
     Comp2Component,
+    AngularServicesComponent,
+    HomeComponent,
+    HeroComponent,
+    SidebarComponent,
+    HeaderServiceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

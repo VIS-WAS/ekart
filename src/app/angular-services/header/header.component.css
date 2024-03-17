@@ -1,0 +1,36 @@
+.header-container {
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.header-logo {
+  font-size: 34px;
+  padding: 30px 50px;
+  font-family: "Heebo", sans-serif;
+  color: #1c2833;
+  font-weight: bold;
+}
+
+.header-nav {
+  margin-left: 400px;
+  padding: 30px 10px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+.header-button {
+  background-color: #0047ab;
+  color: white;
+  margin-left: 20px;
+  width: 160px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25px;
+  margin: 0px 10px;
+  color: #28282b;
+  font-weight: bold;
+}
