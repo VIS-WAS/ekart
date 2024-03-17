@@ -26,6 +26,9 @@ import { DisableProductDirective } from './CustomDirectives/disable-product.dire
 import { ClassDirective } from './CustomDirectives/class.directive';
 import { StyleDirective } from './CustomDirectives/style.directive';
 import { IfDirective } from './CustomDirectives/if.directive';
+import { ViewEncapsulationComponent } from './view-encapsulation/view-encapsulation.component';
+import { Comp1Component } from './view-encapsulation/comp1/comp1.component';
+import { Comp2Component } from './view-encapsulation/comp2/comp2.component';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { IfDirective } from './CustomDirectives/if.directive';
     ClassDirective,
     StyleDirective,
     IfDirective,
+    ViewEncapsulationComponent,
+    Comp1Component,
+    Comp2Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
