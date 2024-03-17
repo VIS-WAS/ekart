@@ -8,9 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ekart';
 
-  display: boolean = true;
+  tab: string = '';
 
-  displayTerms() {
-    this.display = !this.display;
+  onInfoClicked() {
+    this.tab = 'info';
+  }
+  onserviceClicked() {
+    this.tab = 'service';
+  }
+  onprivacyClicked() {
+    this.tab = 'privacy';
+  }
+  onuserClicked() {
+    this.tab = 'user';
   }
 }
