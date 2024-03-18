@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SubscribeService } from 'src/app/Services/subscribe.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HeroComponent {
   OnSubscribe() {
-    alert('You are successfully subscribed. Now you can enjoy our services');
+    let subService = new SubscribeService();
+    subService.OnSubscribeClicked('Monthly');
   }
 }
