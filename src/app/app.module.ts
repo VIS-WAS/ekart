@@ -70,6 +70,10 @@ import { HeaderServiceComponent } from './angular-services/header/header.compone
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
+
+  //------------// Dependency module injector //---------------//
+  // providers: [SubscribeService],
+  //------------// Dependency modile injector //---------------//
   bootstrap: [AppComponent],
 })
 export class AppModule {}

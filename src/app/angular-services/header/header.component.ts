@@ -5,7 +5,10 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
   selector: 'app-headerService',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  providers: [SubscribeService],
+
+  //------------// Dependency hierarchical to child component //---------------//
+  // providers: [SubscribeService],
+  //------------// Dependency hierarchical to child component //---------------//
 })
 export class HeaderServiceComponent {
   constructor(private subSerive: SubscribeService) {}

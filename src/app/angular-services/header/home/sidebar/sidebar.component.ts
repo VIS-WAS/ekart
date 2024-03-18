@@ -5,7 +5,10 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  providers: [SubscribeService],
+
+  //------------// Dependency over ride on child component //---------------//
+  // providers: [SubscribeService],
+  //------------// Dependency over ride on child component //---------------//
 })
 export class SidebarComponent {
   constructor(private subSerive: SubscribeService) {}
