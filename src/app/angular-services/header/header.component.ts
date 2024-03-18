@@ -5,10 +5,11 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
   selector: 'app-headerService',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
+  providers: [SubscribeService],
 })
 export class HeaderServiceComponent {
+  constructor(private subSerive: SubscribeService) {}
   OnSubscribe() {
-    let subService = new SubscribeService();
-    subService.OnSubscribeClicked('Yearly');
+    this.subSerive.OnSubscribeClicked('Yearly');
   }
 }

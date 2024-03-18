@@ -5,10 +5,11 @@ import { SubscribeService } from 'src/app/Services/subscribe.service';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
+  providers: [SubscribeService],
 })
 export class SidebarComponent {
+  constructor(private subSerive: SubscribeService) {}
   OnSubscribe() {
-    let subService = new SubscribeService();
-    subService.OnSubscribeClicked('Quaterly');
+    this.subSerive.OnSubscribeClicked('Quaterly');
   }
 }
