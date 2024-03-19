@@ -34,6 +34,9 @@ import { HomeComponent } from './angular-services/header/home/home.component';
 import { HeroComponent } from './angular-services/header/home/hero/hero.component';
 import { SidebarComponent } from './angular-services/header/home/sidebar/sidebar.component';
 import { HeaderServiceComponent } from './angular-services/header/header.component';
+import { AdminComponent } from './angular-services/header/admin/admin.component';
+import { UserDetailsComponent } from './angular-services/header/admin/user-details/user-details.component';
+import { UserListComponent } from './angular-services/header/admin/user-list/user-list.component';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -67,6 +70,9 @@ import { HeaderServiceComponent } from './angular-services/header/header.compone
     HeroComponent,
     SidebarComponent,
     HeaderServiceComponent,
+    AdminComponent,
+    UserDetailsComponent,
+    UserListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

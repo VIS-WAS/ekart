@@ -15,4 +15,12 @@ export class HeaderServiceComponent {
   OnSubscribe() {
     this.subSerive.OnSubscribeClicked('Yearly');
   }
+  render: string = '';
+
+  homeClicked() {
+    this.render = '';
+  }
+  adminClicked() {
+    this.render = 'admin';
+  }
 }
