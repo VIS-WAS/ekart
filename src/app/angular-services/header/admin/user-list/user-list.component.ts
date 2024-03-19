@@ -10,7 +10,7 @@ import { UserService } from 'src/app/Services/user.service';
 
   // providers: [UserService],
 
-  // -----//this will create separate instance - problem with dependency over ride
+  // -----//this will create separate instance - problem with dependency override
 })
 export class UserListComponent {
   constructor(private userService: UserService) {}

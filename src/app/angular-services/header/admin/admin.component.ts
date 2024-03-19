@@ -21,6 +21,5 @@ export class AdminComponent {
       this.subType,
       this.status
     );
-    console.log(this.userService.users);
   }
 }
