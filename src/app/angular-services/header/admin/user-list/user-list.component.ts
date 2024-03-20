@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { UserService } from 'src/app/Services/user.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { UserService } from 'src/app/Services/user.service';
   // -----//this will create separate instance - problem with dependency override
 })
 export class UserListComponent {
-  constructor(private userService: UserService) {}
+  constructor(@Inject('USER_SERVICE') private userService: UserService) {}
 
   userList = this.userService.GetAllUsers();
 }

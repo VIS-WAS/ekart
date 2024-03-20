@@ -38,6 +38,8 @@ import { AdminComponent } from './angular-services/header/admin/admin.component'
 import { UserDetailsComponent } from './angular-services/header/admin/user-details/user-details.component';
 import { UserListComponent } from './angular-services/header/admin/user-list/user-list.component';
 import { LoggerService } from './Services/logger.service';
+import { SubscribeService } from './Services/subscribe.service';
+import { UserService } from './Services/user.service';
 // import { NgModel } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -76,7 +78,12 @@ import { LoggerService } from './Services/logger.service';
     UserListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [LoggerService],
+  providers: [
+    SubscribeService,
+    { provide: LoggerService, useClass: LoggerService },
+
+    { provide: 'USER_SERVICE', useClass: UserService },
+  ],
 
   //------------// Dependency module injector //---------------//
   // providers: [SubscribeService],
