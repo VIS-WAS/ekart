@@ -83,14 +83,14 @@ export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
     SubscribeService,
-    { provide: LoggerService, useClass: LoggerService },
+
+    // -------// this one replace by passing providedIn :'root' in serive
+    // { provide: LoggerService, useClass: LoggerService },
+    // -------// this one replace by passing providedIn :'root' in serive
 
     { provide: USER_TOKEN, useClass: UserService },
   ],
 
-  //------------// Dependency module injector //---------------//
-  // providers: [SubscribeService],
-  //------------// Dependency modile injector //---------------//
   bootstrap: [AppComponent],
 })
 export class AppModule {}
