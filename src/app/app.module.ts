@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +41,9 @@ import { LoggerService } from './Services/logger.service';
 import { SubscribeService } from './Services/subscribe.service';
 import { UserService } from './Services/user.service';
 // import { NgModel } from '@angular/forms';
+
+export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +85,7 @@ import { UserService } from './Services/user.service';
     SubscribeService,
     { provide: LoggerService, useClass: LoggerService },
 
-    { provide: 'USER_SERVICE', useClass: UserService },
+    { provide: USER_TOKEN, useClass: UserService },
   ],
 
   //------------// Dependency module injector //---------------//
