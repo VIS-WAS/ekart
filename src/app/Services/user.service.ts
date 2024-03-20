@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { User } from '../Model/User';
 import { LoggerService } from './logger.service';
 
@@ -11,20 +11,19 @@ export class UserService {
   ];
 
   constructor(private logger: LoggerService) {}
+
+  OnUserDetailsClicked: EventEmitter<User> = new EventEmitter<User>();
+
+  OnShowUserDetails(user: User) {
+    this.OnUserDetailsClicked.emit(user);
+  }
+
   GetAllUsers() {
     return this.users;
   }
   CreateUser(name: string, gender: string, subType: string, status: string) {
     let user = new User(name, gender, subType, status);
     this.users.push(user);
-
-    //---------// explicitely creating instance of Logger service class(tightly coupled)//---------//
-
-    // let logger = new LoggerService();
-    //
-
-    //---------// explicitely creating instance of Logger service class(tightly coupled)//---------//
-
     this.logger.LogMessage(name, status);
   }
 }
