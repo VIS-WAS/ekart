@@ -11,28 +11,63 @@ export class AngularObservablesComponent {
 
   //----observable
   myObservable = new Observable((observer) => {
-    // observer.next([1, 2, 3, 4, 5, 6]);
-    observer.next(9);
+    observer.next(25);
     setTimeout(() => {
       observer.next(76);
-    }, 1000); // just to demonstrate flow of data
-    observer.next(23);
+    }, 1000);
+    setTimeout(() => {
+      observer.next(96);
+    }, 2000);
     setTimeout(() => {
       observer.next(88);
-    }, 2000);
-    observer.next(56);
+    }, 3000);
+    setTimeout(() => {
+      observer.error(new Error('something went wrong. Pleaser try again'));
+    }, 3000);
     setTimeout(() => {
       observer.next(46);
+    }, 4000);
+    setTimeout(() => {
+      observer.next(6);
+    }, 5000);
+    setTimeout(() => {
+      observer.complete();
     }, 3000);
-    observer.next(13);
   });
 
   GetAsyncData() {
     //observer
     //next, error, complete
-    this.myObservable.subscribe((val: any) => {
-      // this.data = val
-      this.data.push(val);
+    //----------//below method is depricated to pass callback functions to subscribe------//
+    // this.myObservable.subscribe(
+    //   (val: any) => {
+    //     this.data.push(val);
+    //   },
+    //   (err) => {
+    //     alert(err.message);
+    //   },
+    //   () => {
+    //     alert('all the transfered successfully');
+    //   }
+    // );
+    //----------//below method is depricated to pass callback functions to subscribe------//
+
+    this.myObservable.subscribe({
+      //-----------//below will throw error due to this.data is local to subscribe not outer call
+      // next(val: any) {
+      //   this.data.push(val);
+      // },
+
+      next: (val: any) => {
+        this.data.push(val);
+      },
+
+      error(err) {
+        alert(err.message);
+      },
+      complete() {
+        alert('All the data transfered successfully');
+      },
     });
   }
 }
