@@ -11,42 +11,11 @@ export class AngularObservablesComponent {
   array1 = [1, 3, 5, 7, 9, 11];
   array2 = ['a', 'c', 'd', 'e', 'f'];
 
-  //----observable
+  promiseData = new Promise((resolve, reject) => {
+    resolve([1, 2, 3, 4, 5, 6]);
+  });
 
-  // ------//using of()//-------//
-
-  // ---   myObservable = of(this.array1, this.array2, 1, 2, 4);
-
-  // ------//using of()//-------//
-
-  // ------//using from()//-------//
-  myObservable = from(this.array1);
-  // ------//using from()//-------//
-
-  // myObservable = new Observable((observer) => {
-  //   observer.next(25);
-  //   setTimeout(() => {
-  //     observer.next(76);
-  //   }, 1000);
-  //   setTimeout(() => {
-  //     observer.next(96);
-  //   }, 2000);
-  //   setTimeout(() => {
-  //     observer.next(88);
-  //   }, 3000);
-  //   setTimeout(() => {
-  //     observer.error(new Error('something went wrong. Pleaser try again'));
-  //   }, 3000);
-  //   setTimeout(() => {
-  //     observer.next(46);
-  //   }, 4000);
-  //   setTimeout(() => {
-  //     observer.next(6);
-  //   }, 5000);
-  //   setTimeout(() => {
-  //     observer.complete();
-  //   }, 3000);
-  // });
+  myObservable = from(this.promiseData);
 
   GetAsyncData() {
     this.myObservable.subscribe({
