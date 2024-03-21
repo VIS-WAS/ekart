@@ -1,0 +1,10 @@
+.observe-container {
+  margin: 80px 100px;
+  font-weight: bold;
+}
+button {
+  background-color: orange;
+  color: seashell;
+  width: 100px;
+  height: 40px;
+}

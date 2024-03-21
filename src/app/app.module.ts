@@ -40,6 +40,7 @@ import { UserListComponent } from './angular-services/header/admin/user-list/use
 import { LoggerService } from './Services/logger.service';
 import { SubscribeService } from './Services/subscribe.service';
 import { UserService } from './Services/user.service';
+import { AngularObservablesComponent } from './angular-observables/angular-observables.component';
 // import { NgModel } from '@angular/forms';
 
 export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
@@ -79,6 +80,7 @@ export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
     AdminComponent,
     UserDetailsComponent,
     UserListComponent,
+    AngularObservablesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
