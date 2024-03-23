@@ -5,6 +5,6 @@
 button {
   background-color: orange;
   color: seashell;
-  width: 100px;
+  width: auto;
   height: 40px;
 }

@@ -1,8 +1,12 @@
 <div class="observe-container">
   <h2>Observerable in angular</h2>
-  <div class="data-list" *ngFor="let x of data">
+  <!-- <div class="data-list" *ngFor="let x of data">
     {{ x }}
   </div>
 
-  <button (click)="GetAsyncData()">Get Data</button>
+  <button (click)="GetAsyncData()">Get Data</button> -->
+
+  <div class="data-list" id="divContainer"></div>
+
+  <button #createBtn>Create new item</button>
 </div>
