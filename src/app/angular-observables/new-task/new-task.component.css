@@ -1,0 +1,41 @@
+/* .create-task-container {
+  height: 300px;
+  width: 100%;
+  background-color: rgb(11, 57, 97);
+}
+
+.create-task-container > input {
+  margin: 125px 0px 125px 750px;
+  
+  width: 350px;
+  height: 50px;
+}
+
+.create-task-container > button {
+  margin: 125px;
+  margin-left: 20px;
+  width: auto;
+  height: 50px;
+  background-color: #bd6565;
+} */
+
+.create-task-container {
+  margin: 0px;
+  padding: 100px 60px;
+  background-color: #1b1834;
+  text-align: center;
+}
+
+input {
+  width: 420px;
+  height: 45px;
+  padding: 5px 20px;
+}
+button {
+  height: 45px;
+  border: none;
+  background-color: #e7005e;
+  color: white;
+  padding: 5px 20px;
+  margin-left: 10px;
+}

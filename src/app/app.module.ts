@@ -41,6 +41,8 @@ import { LoggerService } from './Services/logger.service';
 import { SubscribeService } from './Services/subscribe.service';
 import { UserService } from './Services/user.service';
 import { AngularObservablesComponent } from './angular-observables/angular-observables.component';
+import { NewTaskComponent } from './angular-observables/new-task/new-task.component';
+import { ShowTaskComponent } from './angular-observables/show-task/show-task.component';
 // import { NgModel } from '@angular/forms';
 
 export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
@@ -81,6 +83,8 @@ export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
     UserDetailsComponent,
     UserListComponent,
     AngularObservablesComponent,
+    NewTaskComponent,
+    ShowTaskComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
