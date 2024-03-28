@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subject',
@@ -8,26 +8,34 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class SubjectComponent implements OnInit {
   ngOnInit() {
-    //------------//using Behavior Subject//-------------//
+    //------------//using ReplaySubject//-------------//
 
-    let sub = new BehaviorSubject<number>(100);
+    const sub = new ReplaySubject(2, 1000);
+
+    // const sub = new Subject();
+
+    sub.next(100);
+    sub.next(200);
+    sub.next(300);
 
     //subscriber 1
     sub.subscribe((data) => {
-      console.log('Subject 1 ', data); //100
+      console.log('Subject 1 ', data); //100,200,300
     });
 
     //subscriber 2
     sub.subscribe((data) => {
-      console.log('Subject 2 ', data); //100
+      console.log('Subject 2 ', data); //100,200,300
     });
 
-    sub.next(2020); //now again it will be 2020 and 2020
+    sub.next(2020);
 
     sub.subscribe((data) => {
-      console.log('Subject 3 ', data); // here 2020 not 100 bcz last emitted value is 2020
+      console.log('Subject 3 ', data); //100,200,300,2020
     });
 
-    //------------//using  BehaviorSubject//-------------//
+    sub.next(2023); //100,200,300,2020,2023
+
+    //------------//using  ReplaySubject//-------------//
   }
 }
