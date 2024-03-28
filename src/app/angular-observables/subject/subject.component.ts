@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subject',
@@ -9,24 +8,26 @@ import { ajax } from 'rxjs/ajax';
 })
 export class SubjectComponent implements OnInit {
   ngOnInit() {
-    //AJAX CALL
-    //GET request api of random user
-    const data = ajax('https://randomuser.me/api/');
+    //------------//using Behavior Subject//-------------//
 
-    //creating subject variable
-    const subject = new Subject();
+    let sub = new BehaviorSubject<number>(100);
 
-    //instead of call back function passing subject. so that we are data consuming as subject
-    data.subscribe(subject);
+    //subscriber 1
+    sub.subscribe((data) => {
+      console.log('Subject 1 ', data); //100
+    });
 
-    subject.subscribe((res) => {
-      console.log(res);
+    //subscriber 2
+    sub.subscribe((data) => {
+      console.log('Subject 2 ', data); //100
     });
-    subject.subscribe((res) => {
-      console.log(res);
+
+    sub.next(2020); //now again it will be 2020 and 2020
+
+    sub.subscribe((data) => {
+      console.log('Subject 3 ', data); // here 2020 not 100 bcz last emitted value is 2020
     });
-    subject.subscribe((res) => {
-      console.log(res);
-    });
+
+    //------------//using  BehaviorSubject//-------------//
   }
 }
