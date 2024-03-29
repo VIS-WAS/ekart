@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
+import {
+  AsyncSubject,
+  BehaviorSubject,
+  Observable,
+  ReplaySubject,
+  Subject,
+} from 'rxjs';
 
 @Component({
   selector: 'app-subject',
@@ -8,34 +14,20 @@ import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 })
 export class SubjectComponent implements OnInit {
   ngOnInit() {
-    //------------//using ReplaySubject//-------------//
+    //------------//using AsuncSubject//-------------//
 
-    const sub = new ReplaySubject(2, 1000);
+    const asyncSubject = new AsyncSubject();
 
-    // const sub = new Subject();
+    asyncSubject.next(100);
+    asyncSubject.next(200);
+    asyncSubject.next(300);
 
-    sub.next(100);
-    sub.next(200);
-    sub.next(300);
+    asyncSubject.complete();
+    asyncSubject.next(400); // it will not be called bcz it is called after complete()
+    asyncSubject.subscribe((data) => console.log(`Subscriber 1 ${data}`)); //300
 
-    //subscriber 1
-    sub.subscribe((data) => {
-      console.log('Subject 1 ', data); //100,200,300
-    });
+    asyncSubject.subscribe((data) => console.log(`Subscriber 2 ${data}`)); //300
 
-    //subscriber 2
-    sub.subscribe((data) => {
-      console.log('Subject 2 ', data); //100,200,300
-    });
-
-    sub.next(2020);
-
-    sub.subscribe((data) => {
-      console.log('Subject 3 ', data); //100,200,300,2020
-    });
-
-    sub.next(2023); //100,200,300,2020,2023
-
-    //------------//using  ReplaySubject//-------------//
+    //------------//using  AsyncSubject//-------------//
   }
 }
