@@ -44,6 +44,7 @@ import { AngularObservablesComponent } from './angular-observables/angular-obser
 import { NewTaskComponent } from './angular-observables/new-task/new-task.component';
 import { ShowTaskComponent } from './angular-observables/show-task/show-task.component';
 import { SubjectComponent } from './angular-observables/subject/subject.component';
+import { UnsubscribeComponent } from './angular-observables/unsubscribe/unsubscribe.component';
 // import { NgModel } from '@angular/forms';
 
 export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
@@ -87,6 +88,7 @@ export const USER_TOKEN = new InjectionToken<UserService>('USER_SERVICE');
     NewTaskComponent,
     ShowTaskComponent,
     SubjectComponent,
+    UnsubscribeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [

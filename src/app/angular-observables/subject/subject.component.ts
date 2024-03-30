@@ -14,20 +14,29 @@ import {
 })
 export class SubjectComponent implements OnInit {
   ngOnInit() {
-    //------------//using AsuncSubject//-------------//
+    //------------//using Promise vs observable//-------------//
 
-    const asyncSubject = new AsyncSubject();
+    const promise = new Promise((resolve, reject) => {
+      console.log('Promise is called'); // called without any subscriber
+      resolve(100);
+      resolve(200);
+      resolve(300);
+    });
 
-    asyncSubject.next(100);
-    asyncSubject.next(200);
-    asyncSubject.next(300);
+    promise.then((data) => {
+      console.log('promise data', data); // return only 100
+    });
 
-    asyncSubject.complete();
-    asyncSubject.next(400); // it will not be called bcz it is called after complete()
-    asyncSubject.subscribe((data) => console.log(`Subscriber 1 ${data}`)); //300
+    const observe = new Observable((data) => {
+      console.log('Observable is called'); // called only when there is subscriber
+      data.next(100);
+      data.next(200);
+      data.next(300);
+    });
+    observe.subscribe((data) => {
+      console.log('observable data ', data); //retrun 100,200,300
+    });
 
-    asyncSubject.subscribe((data) => console.log(`Subscriber 2 ${data}`)); //300
-
-    //------------//using  AsyncSubject//-------------//
+    //------------//using  promise vs observable//-------------//
   }
 }
